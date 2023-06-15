@@ -6,6 +6,8 @@ import openpyxl, xlrd
 from openpyxl import Workbook
 import pathlib
 
+#Code dealing with excel work
+
 file=pathlib.Path('Backened_data.xlsx')
 if file.exists():
     pass
@@ -19,6 +21,9 @@ else:
     sheet['E1']="Address"
     
     file.save('Backened_data.xlsx')
+
+
+#Functions
 
 def submit():
     name=nameValue.get()
@@ -52,7 +57,7 @@ def clear():
     ageValue.set('')
     addressEntry.delete(1.0,END)
 
-
+#root fundamentals
 
 root=Tk()
 root.title("Data entery")
@@ -91,6 +96,7 @@ gender_combobox=Combobox(root,values=['Male','Female'], font='arial 14', state='
 gender_combobox.place(x=440,y=200)
 gender_combobox.set('Male')
 
+#address
 addressEntry = Text(root,font=("arial"), width=50, height=4, bd=2)
 
 
@@ -99,7 +105,7 @@ contactEntry.place(x=200,y=150)
 ageEntry.place(x=200,y=200)
 addressEntry.place(x=200,y=250)
 
-
+#button
 
 Button(root,text="Submit",bg="#326273",fg="white",width=15,height=2,command=submit).place(x=200,y=350)
 Button(root,text="Clear",bg="#326273",fg="white",width=15,height=2,command=clear).place(x=340,y=350)
